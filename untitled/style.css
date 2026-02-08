@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle, #220022, #000);
+  color: white;
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+h1 {
+  font-size: 48px;
+  color: #ffb6ff;
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 34px;
+  color: #ffb6ff;
+  margin-bottom: 30px;
+}
+
+p {
+  color: #ffd6ff;
+  margin: 15px 0;
+}
+
+button {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4da6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+/* PHOTOS */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.photo {
+  background: rgba(255,255,255,0.08);
+  padding: 10px;
+  border-radius: 16px;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+
+.photo.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.photo img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.photo p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* CAKE */
+.cake-box {
+  position: relative;
+  margin-top: 60px;
+  font-size: 170px;
+  height: 200px;
+}
+
+.cake-slice {
+  position: absolute;
+  top: 0;
+  transition: 1s ease;
+}
+
+.left {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* clearer 2-slice separation */
+.cut .left {
+  transform: translateX(-170px) rotate(-5deg);
+}
+
+.cut .right {
+  transform: translateX(170px) rotate(5deg);
+}
+
+#candle {
+  font-size: 60px;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+/* BUTTON AREA */
+.controls {
+  margin-top: 120px;
+}
+
+/* CRACKERS */
+#crackers span {
+  position: fixed;
+  font-size: 24px;
+  animation: boom 1.2s linear;
+}
+
+@keyframes boom {
+  from { transform: scale(0.2); opacity: 1; }
+  to { transform: scale(1.5); opacity: 0; }
+}
+
+/* FINAL */
+.final {
+  margin-top: 120px;
+  animation: fadeUp 2s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HEARTS */
+.hearts span {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: float 8s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
